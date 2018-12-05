@@ -9,7 +9,7 @@ hostname_check = ['brbrb-d8fb22af1']
 
 antiVM = []
 for i in heads:
-	if GetMnem(i) in basic_check, vmware_check, vbox_check: 
+	if GetMnem(i) in basic_check, vmware_check, vbox_check, hostname_check: 
 		antiVM.append(i)
 
 #Check out Hex View-A for I/O ports
