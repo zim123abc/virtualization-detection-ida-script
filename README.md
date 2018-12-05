@@ -6,11 +6,13 @@ Installation
  
 
  - TODO: create detection for string 'vmware' and 'virtualbox'
+
+*Base64 all strings*
+
   - check for these strings:
    - Intel(R) Xeon(R) CPU
    - Common KVM processor
    - Common 32-bit KVM
-   - Virtual CPU
    - Intel Celeron_4x0 (Conroe/Merom Class Core 2)
    - Westmere E56xx/L56xx/X56xx (Nehalem-C)
    - Intel Core 2 Duo P9xxx (Penryn Class Core 2)
@@ -20,9 +22,8 @@ Installation
    - AMD Opteron 22xx (Gen 2 Class Opteron)
    - AMD Opteron 23xx (Gen 3 Class Opteron)
    - AMD Opteron 62xx class CPU
-   - Intel CPU version
-   - VMwareVMware
-   - XenVMMXenVMM
+   - Intel CPU version - cpuid
+   
    - KVMKVMKVM
    - prl hyperv
    - Microsoft Hv
@@ -36,19 +37,14 @@ Installation
   - infected-system
 
  - Even more strings:
-  - malware.exe
-  - \virus\
-  - admin\downloads\samp1e_
-  - sample_execution
-  - mlwr_smpl.exe
-  - cmd.exe
+  - cmd.exe && hex version
   - 0x564D5868 - VMXh for VMWare I/O port
   - 0x5658 - VX(port) for VMWare I/O port
   - VMWare processes: Vmtoolsd.exe, Vmwaretrat.exe, Vmwareuser.exe, Vmacthlp.exe
   - Vbox processes: vboxservice.exe, vboxtray.exe
 
 - Check for Mac addresses:
- - VMWare: 00:05:69, 00:0C:29, 00:1C:14, 00:50:56
+ - VMWare: 00:05:69, 00:0C:29, 00:1C:14, 00:50:56:??
  - Vbox: 08:00:27
   
  - Check for signatures:
@@ -58,5 +54,3 @@ Installation
 
  - look for this call; might be malicious
   - RtlGetNativeSystemInformation
-
- - and many more...,
