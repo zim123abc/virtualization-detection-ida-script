@@ -2,10 +2,19 @@ from idautils import *
 from idc import *
 
 heads = Heads(SegStart(ScreenEA()), SegEnd(ScreenEA()))
+basic_check = ['sidt', 'sgdt', 'sldt', 'smsw', 'str', 'in', 'cpuid', 'cmd.exe']
+vmware_check = ['Vmtoolsd.exe', 'Vmwaretrat.exe', 'Vmwareuser.exe', 'Vmacthlp.exe']
+vbox_check = ['vboxservice.exe', 'vboxtray.exe']
+hostname_check = ['brbrb-d8fb22af1']
+
 antiVM = []
 for i in heads:
-	if (GetMnem(i) == "sidt" or GetMnem(i) == "sgdt" or GetMnem(i) == "sldt" or GetMnem(i) == "smsw" or GetMnem(i) == "str" or GetMnem(i) == "in" or GetMnem(i) == "cpuid"):
+	if GetMnem(i) in basic_check, vmware_check, vbox_check: 
 		antiVM.append(i)
+
+#Check out Hex View-A for I/O ports
+  #0x564D5868 #VMXh for VMWare I/O port
+  #0x5658 #VX(port) for VMWare I/O port
 
 #Calls to specific functions need to be checked: VirtualProtect,GetCursorPosition() 
 '''
