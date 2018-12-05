@@ -1,6 +1,10 @@
 # virtualization-detection-ida-script
 Python Script for IDA that displays virtualization detection specific code in a binary
 
+Installation
+ - Copy findAntiVM.py file to the plugins directory of IDA (%IDAPATH%\plugins) and start IDA.
+ 
+
  - TODO: create detection for string 'vmware' and 'virtualbox'
   - check for these strings:
    - Intel(R) Xeon(R) CPU
