@@ -21,6 +21,8 @@ for i in heads:
                                 antiVM.append(i)
                                 antiVM.append(i + 1)
                                 antiVM.append(i + 2)
+        if GetMnem(i) == "call" and "RtlGetNativeSystemInformation" in GetOpnd(i, 0):
+                antiVm.append(i)
 
 #Check out Hex View-A for I/O ports
   #0x564D5868 #VMXh for VMWare I/O port
