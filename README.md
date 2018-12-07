@@ -10,20 +10,7 @@ Installation
 *Base64 all strings*
 
   - check for these strings:
-   - Intel(R) Xeon(R) CPU
-   - Common KVM processor
-   - Common 32-bit KVM
-   - Intel Celeron_4x0 (Conroe/Merom Class Core 2)
-   - Westmere E56xx/L56xx/X56xx (Nehalem-C)
-   - Intel Core 2 Duo P9xxx (Penryn Class Core 2)
-   - Intel Core i7 9xx (Nehalem Class Core i7)
-   - Intel Xeon E312xx (Sandy Bridge)
-   - AMD Opteron 240 (Gen 1 Class Opteron)
-   - AMD Opteron 22xx (Gen 2 Class Opteron)
-   - AMD Opteron 23xx (Gen 3 Class Opteron)
-   - AMD Opteron 62xx class CPU
    - Intel CPU version - cpuid
-   
    - KVMKVMKVM
    - prl hyperv
    - Microsoft Hv
