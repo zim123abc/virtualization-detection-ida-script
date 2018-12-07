@@ -4,15 +4,16 @@ from idc import *
 heads = Heads(SegStart(ScreenEA()), SegEnd(ScreenEA()))
 
 #Calls to autorun/autorunsc -- these hide signed MS entries!!
-basic_check = ['sidt', 'sgdt', 'sldt', 'smsw', 'str', 'in', 'cpuid', 'cmd', 'xor']
+pill_check = ['sidt', 'sgdt', 'sldt', 'smsw', 'str', 'in']
+malicious_check = ['cmd','cpuid','autorun', 'autorunsc']
 vmware_check = ['Vmtoolsd', 'Vmwaretrat', 'Vmwareuser', 'Vmacthlp']
 vbox_check = ['vboxservice', 'vboxtray', 'VBOXBIOS']
-hostname_check = ['brbrb-d8fb22af1']
-env_check = ['KVMKVMKVM', 'prl hyperv', 'Microsoft Hv', 'autorun', 'autorunsc']
-
+hostname_check = ['brbrb-d8fb22af1','KVMKVMKVM', 'prl hyperv', 'Microsoft Hv', 'XenVMMXenVMM']
+env_check = ['dmesg', 'kmods', 'pcidevs',' dmidecode','sysfs','procfs', 'dashXmstdout']
 antiVM = []
+
 for i in heads:
-        for x in basic_check,vmware_check,vbox_check,hostname_check,env_check:
+        for x in pill_check,vmware_check,vbox_check,hostname_check,env_check,malicious_check:
                 if GetMnem(i) in x: 
 	                antiVM.append(i)
 			
@@ -38,10 +39,6 @@ for functionAddr in Functions():
             if GetMnem(xref).lower() == "call":           
                 print hex(xref)
 '''
-
-#Calls to specific registry keys: \Registry\Machine\HARDWARE\ACPI\DSDT\VBOX__\VBOXBIOS,
-#Any Modification ot %SystemRoot% directory
-#base64 decode - ?
 
 for i in antiVM:
 	SetColor(i, CIC_ITEM, 0x0000ff)
