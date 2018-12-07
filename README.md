@@ -8,7 +8,13 @@ Installation
  - TODO: create detection for string 'vmware' and 'virtualbox'
 
 *Base64 all strings*
+<<<<<<< HEAD
    
+=======
+
+  - check for these strings:
+   - Intel CPU version - cpuid
+>>>>>>> jordan
    - KVMKVMKVM
    - prl hyperv
    - Microsoft Hv
